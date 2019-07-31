@@ -11,8 +11,6 @@ def gen_key(parts=4, chars_per_part = 8):
 
 
 
-
-
 """ Pybites solution
 def gen_key(parts=4, chars_per_part=8):
     return DASH.join(''.join(choice(ALPHABET) for i in range(chars_per_part))
