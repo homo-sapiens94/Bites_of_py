@@ -9,10 +9,4 @@ class RecordScore():
 
 
 
-record = RecordScore()
-print(record(1))
-record(10)
-record(9)
-print(record(11))
-print(record.highest)  # initial max
-record(5)
+    	
