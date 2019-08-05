@@ -59,3 +59,6 @@ def get_belt_itertools(user_score):
     belts = takewhile(lambda x: x[0] <= user_score,
                       HONORS.items())
     return list(belts)[-1][1]
+
+
+
