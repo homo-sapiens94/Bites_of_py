@@ -82,3 +82,32 @@ def get_income_distribution(xml=countries):
         incomes[income].append(country)
 
     return incomes
+
+
+
+
+
+
+#One mor solution
+
+
+from pathlib import Path
+from urllib.request import urlretrieve
+import xml.etree.ElementTree as ET
+from collections import defaultdict
+# import the countries xml file
+tmp = Path('/tmp')
+countries = tmp / 'countries.xml'
+
+if not countries.exists():
+    urlretrieve('https://bit.ly/2IzGKav', countries)
+
+
+def get_income_distribution(xml=countries):
+    
+    out = defaultdict(list)
+    tree = ET.parse(countries)
+    root = tree.getroot()
+    for child in root:
+        out[child[4].text].append(child[1].text)
+    return out 
